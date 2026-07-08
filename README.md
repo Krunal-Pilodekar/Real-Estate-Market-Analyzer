@@ -36,8 +36,8 @@ Built as a BITS Pilani WILP Design Project (BITS ZC229T), in collaboration with 
 
 ## 🖥️ Demo
 
-> Add a GIF or screenshot of the dashboard here, e.g.:
-> `![Dashboard Screenshot](assets/dashboard.png)`
+<img width="1913" height="912" alt="image" src="https://github.com/user-attachments/assets/936b960d-002d-4b87-bd39-bf9a2aaf37b9" />
+
 
 ## 🧠 Model Performance
 
