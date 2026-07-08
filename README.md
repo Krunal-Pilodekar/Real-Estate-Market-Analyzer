@@ -21,6 +21,7 @@
 
 Built as a BITS Pilani WILP Design Project (BITS ZC229T), in collaboration with HCLTech.
 
+<a name="features"></a>
 ## ✨ Features
 
 - 🌆 **Multi-city support** — Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad
@@ -34,6 +35,7 @@ Built as a BITS Pilani WILP Design Project (BITS ZC229T), in collaboration with 
 - ⚙️ **Metadata-driven architecture** — cities, locations, feature names, and slider ranges are all read from a single exported metadata file, so the frontend never hardcodes them
 - 🛡️ **Prediction safety checks** — guards against NaN/Inf outputs
 
+<a name="demo"></a>
 ## 🖥️ Demo
 
 <img width="950" height="450" alt="image" src="https://github.com/user-attachments/assets/936b960d-002d-4b87-bd39-bf9a2aaf37b9" />
@@ -52,6 +54,7 @@ Built as a BITS Pilani WILP Design Project (BITS ZC229T), in collaboration with 
 
 XGBoost was selected for production because it handled non-linear feature interactions (location × amenities × area) far better than linear or single-tree models.
 
+<a name="architecture"></a>
 ## 🏗️ Architecture
 
 ```
@@ -85,6 +88,7 @@ Real-Estate-Market-Analyzer/
 └── README.md
 ```
 
+<a name="installation"></a>
 ## 🚀 Installation
 
 ```bash
@@ -102,6 +106,7 @@ pip install streamlit plotly joblib pandas numpy xgboost scikit-learn
 
 > 💡 Add a `requirements.txt` (see [Suggestions](#-suggestions-to-make-this-repo-more-professional) below) so this becomes `pip install -r requirements.txt`.
 
+<a name="usage"></a>
 ## ▶️ Usage
 
 ```bash
