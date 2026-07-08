@@ -125,13 +125,13 @@ Then open the local URL Streamlit prints (usually `http://localhost:8501`) and:
 
 | Name | Focus Area |
 |---|---|
-| Pranav Kokare | Dataset collection, cleaning & preprocessing |
-| Ayush Maurya | Model experimentation & evaluation |
 | Krunal Pilodekar | ML architecture, feature engineering, metadata pipeline |
 | Sahil Shafique | Streamlit dashboard & deployment integration |
+| Pranav Kokare | Dataset collection, cleaning & preprocessing |
+| Ayush Maurya | Model experimentation & evaluation |
 | Ashutosh Singh | GitHub/repo management & project organization |
 
-**Mentors:** Shashi Kant Pandey, Jagan Vignesh R, Poorani Mohan, Amit Chaudhary, Tarun Prithvi Bhuria (HCLTech)
+**Mentors:** Jagan Vignesh R, Poorani Mohan, Amit Chaudhary, Tarun Prithvi Bhuria, Shashi Kant Pandey (HCLTech)
 
 ## 🔮 Future Work
 
@@ -143,7 +143,28 @@ Then open the local URL Streamlit prints (usually `http://localhost:8501`) and:
 
 ## 📄 License
 
-Add a license (MIT recommended for a portfolio project) — see suggestions below.
+MIT License
+
+Copyright (c) 2026 Krunal Pilodekar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 
 ---
 
