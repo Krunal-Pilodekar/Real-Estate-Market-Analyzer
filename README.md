@@ -77,6 +77,8 @@ Real-Estate-Market-Analyzer/
 ├── real_estate_cleaned.csv      # Combined cleaned dataset
 ├── Delhi.csv / Mumbai.csv / Bangalore.csv
 ├── Chennai.csv / Kolkata.csv / Hyderabad.csv
+├── LICENSE
+├── requirements.txt
 └── README.md
 ```
 
