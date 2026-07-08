@@ -37,6 +37,8 @@ Built as a BITS Pilani WILP Design Project (BITS ZC229T), in collaboration with 
 ## 🖥️ Demo
 
 <img width="1913" height="912" alt="image" src="https://github.com/user-attachments/assets/936b960d-002d-4b87-bd39-bf9a2aaf37b9" />
+<img width="1908" height="915" alt="image" src="https://github.com/user-attachments/assets/38477788-49e0-4ce0-a44b-2d20599e052b" />
+
 
 
 ## 🧠 Model Performance
