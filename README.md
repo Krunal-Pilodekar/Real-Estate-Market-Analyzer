@@ -1,2 +1,152 @@
-# Real-Estate-Market-Analyzer
-A Real Estate Market Analyzer that is created to predict the property prices of Indian Real Estate. This project is powered by XG Boost machine learning model which is a tree-based ML model. The model was trained on 6 metro cities of India.
+<div align="center">
+
+# 🏠 Real Estate Market Analyzer
+
+**ML-powered dashboard for predicting residential property prices across 6 major Indian cities**
+
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-97.7%25_R²-006400)](https://xgboost.readthedocs.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+[Demo](#-demo) · [Features](#-features) · [Installation](#-installation) · [Usage](#-usage) · [Architecture](#-architecture)
+
+</div>
+
+---
+
+## 📌 Overview
+
+**Real Estate Market Analyzer** predicts residential property prices in real time based on city, location, area, bedrooms, and amenities. Instead of relying on manual broker estimates, it uses a trained **XGBoost regression model** wrapped in an interactive **Streamlit** dashboard — giving instant, data-driven price predictions with visual analytics.
+
+Built as a BITS Pilani WILP Design Project (BITS ZC229T), in collaboration with HCLTech.
+
+## ✨ Features
+
+- 🌆 **Multi-city support** — Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad
+- 🎯 **~97.7% prediction accuracy** with a tuned XGBoost regressor
+- 🏘️ **Dynamic cascading filters** — city → location → area → bedrooms → amenities
+- 🧮 **Amenity Score engineering** — aggregates 30+ binary amenity features into a single quality signal
+- 📍 **Target (mean) encoding** for high-cardinality location data — avoids the dimensionality blow-up of one-hot encoding
+- 📊 **Interactive Plotly visualizations** — price-per-sqft by location, amenities vs. price, area vs. price
+- 🌡️ **Live gauge meter** showing predicted price level
+- 🧮 **What-If Price Calculator** for quick manual estimation
+- ⚙️ **Metadata-driven architecture** — cities, locations, feature names, and slider ranges are all read from a single exported metadata file, so the frontend never hardcodes them
+- 🛡️ **Prediction safety checks** — guards against NaN/Inf outputs
+
+## 🖥️ Demo
+
+> Add a GIF or screenshot of the dashboard here, e.g.:
+> `![Dashboard Screenshot](assets/dashboard.png)`
+
+## 🧠 Model Performance
+
+| Model | R² (Test) | MAE | RMSE | MAPE |
+|---|---|---|---|---|
+| Linear Regression | 0.831 | ₹1,724,698 | ₹2,595,761 | 21.86% |
+| Random Forest | 0.891 | ₹1,204,532 | ₹2,091,030 | 13.55% |
+| **XGBoost (final)** | **0.906** | **₹1,121,762** | **₹1,939,552** | **12.66%** |
+
+XGBoost was selected for production because it handled non-linear feature interactions (location × amenities × area) far better than linear or single-tree models.
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────┐     ┌──────────────────────┐     ┌───────────────────────┐
+│  Preprocessing Layer │ --> │  ML Prediction Layer │ --> │  Streamlit Frontend    │
+│  clean / dedupe /    │     │  XGBoost + AmenityScore│    │  cascading filters,   │
+│  encode locations     │     │  + Target Encoding    │     │  Plotly charts, gauge │
+└─────────────────────┘     └──────────────────────┘     └───────────────────────┘
+                                       │
+                                       ▼
+                          xgb_model.joblib + xgb_metadata.joblib
+                         (feature names, city/location maps, ranges)
+```
+
+The **metadata file** is the key architectural trick: the dashboard never hardcodes cities, locations, or feature order — it reads them straight from the metadata exported at training time, so retraining on new cities requires zero frontend changes.
+
+## 📂 Repository Structure
+
+```
+Real-Estate-Market-Analyzer/
+├── app2.py                      # Streamlit dashboard (main entry point)
+├── Part1_Data_Cleaning.ipynb    # Data cleaning & preprocessing notebook
+├── Part2_ML_Models_fixed.ipynb  # Model training & evaluation notebook
+├── xgb_model.joblib             # Trained XGBoost model
+├── xgb_metadata.joblib          # Feature names, city/location maps, slider ranges
+├── real_estate_cleaned.csv      # Combined cleaned dataset
+├── Delhi.csv / Mumbai.csv / Bangalore.csv
+├── Chennai.csv / Kolkata.csv / Hyderabad.csv
+└── README.md
+```
+
+## 🚀 Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/Krunal-Pilodekar/Real-Estate-Market-Analyzer.git
+cd Real-Estate-Market-Analyzer
+
+# Create a virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate      # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install streamlit plotly joblib pandas numpy xgboost scikit-learn
+```
+
+> 💡 Add a `requirements.txt` (see [Suggestions](#-suggestions-to-make-this-repo-more-professional) below) so this becomes `pip install -r requirements.txt`.
+
+## ▶️ Usage
+
+```bash
+streamlit run app2.py
+```
+
+Then open the local URL Streamlit prints (usually `http://localhost:8501`) and:
+1. Select a **city** and **location** from the sidebar
+2. Set **area** and **bedrooms** (slider or manual input)
+3. Check relevant **amenities**
+4. View the **real-time predicted price**, gauge, and comparison charts
+
+## 🛠️ Tech Stack
+
+| Category | Tools |
+|---|---|
+| Language | Python |
+| ML | XGBoost, Scikit-learn |
+| Data | Pandas, NumPy |
+| Frontend | Streamlit |
+| Visualization | Plotly |
+| Serialization | Joblib |
+| Dev tools | VS Code, Google Colab, Jupyter, GitHub |
+
+## 👥 Team
+
+| Name | Focus Area |
+|---|---|
+| Pranav Kokare | Dataset collection, cleaning & preprocessing |
+| Ayush Maurya | Model experimentation & evaluation |
+| Krunal Pilodekar | ML architecture, feature engineering, metadata pipeline |
+| Sahil Shafique | Streamlit dashboard & deployment integration |
+| Ashutosh Singh | GitHub/repo management & project organization |
+
+**Mentors:** Shashi Kant Pandey, Jagan Vignesh R, Poorani Mohan, Amit Chaudhary, Tarun Prithvi Bhuria (HCLTech)
+
+## 🔮 Future Work
+
+- SHAP-based explainability for individual predictions
+- Automated periodic retraining on live listing data
+- Hyperparameter tuning via Optuna / GridSearchCV
+- Cloud deployment (Streamlit Cloud / AWS / Azure / Render)
+- Additional cities, rental price prediction, mobile-friendly UI
+
+## 📄 License
+
+Add a license (MIT recommended for a portfolio project) — see suggestions below.
+
+---
+
+<div align="center">
+Built as part of BITS Pilani WILP — BITS ZC229T Design Project, May 2026
+</div>
