@@ -69,9 +69,9 @@ The **metadata file** is the key architectural trick: the dashboard never hardco
 
 ```
 Real-Estate-Market-Analyzer/
-├── app2.py                      # Streamlit dashboard (main entry point)
+├── app.py                       # Streamlit dashboard (main entry point)
 ├── Part1_Data_Cleaning.ipynb    # Data cleaning & preprocessing notebook
-├── Part2_ML_Models_fixed.ipynb  # Model training & evaluation notebook
+├── Part2_ML_Models.ipynb        # Model training & evaluation notebook
 ├── xgb_model.joblib             # Trained XGBoost model
 ├── xgb_metadata.joblib          # Feature names, city/location maps, slider ranges
 ├── real_estate_cleaned.csv      # Combined cleaned dataset
@@ -100,7 +100,7 @@ pip install streamlit plotly joblib pandas numpy xgboost scikit-learn
 ## ▶️ Usage
 
 ```bash
-streamlit run app2.py
+streamlit run app.py
 ```
 
 Then open the local URL Streamlit prints (usually `http://localhost:8501`) and:
