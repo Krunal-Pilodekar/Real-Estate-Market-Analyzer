@@ -53,7 +53,7 @@ XGBoost was selected for production because it handled non-linear feature intera
 
 ```
 ┌─────────────────────┐     ┌──────────────────────┐     ┌───────────────────────┐
-│ Preprocessing Layer │ --> │  ML Prediction Layer │ --> │  Streamlit Frontend   │
+│  Preprocessing Layer│ --> │  ML Prediction Layer │ --> │  Streamlit Frontend   │
 │  clean / dedupe /   │     │XGBoost + AmenityScore│     │  cascading filters,   │
 │  encode locations   │     │  + Target Encoding   │     │  Plotly charts, gauge │
 └─────────────────────┘     └──────────────────────┘     └───────────────────────┘
