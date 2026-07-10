@@ -24,16 +24,16 @@ Built as a BITS Pilani WILP Design Project (BITS ZC229T), in collaboration with 
 <a name="features"></a>
 ## ✨ Features
 
-- 🌆 **Multi-city support** — Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad
-- 🎯 **~97.7% prediction accuracy** with a tuned XGBoost regressor
-- 🏘️ **Dynamic cascading filters** — city → location → area → bedrooms → amenities
-- 🧮 **Amenity Score engineering** — aggregates 30+ binary amenity features into a single quality signal
-- 📍 **Target (mean) encoding** for high-cardinality location data — avoids the dimensionality blow-up of one-hot encoding
-- 📊 **Interactive Plotly visualizations** — price-per-sqft by location, amenities vs. price, area vs. price
-- 🌡️ **Live gauge meter** showing predicted price level
-- 🧮 **What-If Price Calculator** for quick manual estimation
-- ⚙️ **Metadata-driven architecture** — cities, locations, feature names, and slider ranges are all read from a single exported metadata file, so the frontend never hardcodes them
-- 🛡️ **Prediction safety checks** — guards against NaN/Inf outputs
+- **Multi-city support** — Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad
+- **~97.7% prediction accuracy** with a tuned XGBoost regressor
+- **Dynamic cascading filters** — city → location → area → bedrooms → amenities
+- **Amenity Score engineering** — aggregates 30+ binary amenity features into a single quality signal
+- **Target (mean) encoding** for high-cardinality location data — avoids the dimensionality blow-up of one-hot encoding
+- **Interactive Plotly visualizations** — price-per-sqft by location, amenities vs. price, area vs. price
+- **Live gauge meter** showing predicted price level
+- **What-If Price Calculator** for quick manual estimation
+- **Metadata-driven architecture** — cities, locations, feature names, and slider ranges are all read from a single exported metadata file, so the frontend never hardcodes them
+- **Prediction safety checks** — guards against NaN/Inf outputs
 
 <a name="demo"></a>
 ## 🖥️ Demo
